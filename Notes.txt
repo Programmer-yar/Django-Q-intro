@@ -1,0 +1,35 @@
+========== Django Q and Heroku ===============
+1- initialize git repo
+2- create heroku app
+3- add the addons using following command:
+	heroku create --addons=heroku-postgresql,heroku-redis
+------------------------------------------------------------------------------
+4- Note the redis URL by running the command:
+	heroku config:get --app <app_name> REDIS_URL
+
+Output:
+  redis://:p0f6d3236f4643006b66e7bbceefd0ce8678f40d5094b0bf5cb1cb87bc9b3053d@ec2-3
+  5-168-172-231.compute-1.amazonaws.com:12989
+
+Extracted Credentials:
+  redis pass: p0f6d3236f4643006b66e7bbceefd0ce8678f40d5094b0bf5cb1cb87bc9b3053d
+  host: ec2-35-168-172-231.compute-1.amazonaws.com
+  port: 12989
+
+=>Add these in settings.py of the project folder
+******Add Django Q "configurations" in "settings.py" of project's folder*****
+----------------------------------------------------------------------------
+
+5- install django Q and redis using:
+	pip install django-q redis
+
+6- add in installed apps
+7- run migrations and then run following command to check if the django-q 
+   is running:
+	"python manage.py qcluster"
+
+8- Go to admin page and add task to be scheduled there. Background tasks. Cron Jobs
+9- You can also use "async_task(function, arg)" function from django Q to 
+   run asynchronous tasks
+
+
