@@ -41,6 +41,7 @@ def with_django_q(request):
     #First arg is path to function and second one consists of args that
     #called function takes
     message = "Always believe in yourself!"
-    async_task("async_test.services.write_it", message)
+    # async_task("async_test.services.write_it", message)
+    async_task("async_test.services.print_something", message)
     async_task("async_test.services.sleep_and_print", 10, 11)
     return JsonResponse(json_payload)

@@ -1,0 +1,11 @@
+[Unit]
+Description=qcluster runner
+After=network.target
+
+[Service]
+User=root
+Type=simple
+ExecStart=/django_host/HAMYABIWeb/env/bin/python3 /django_host/HAMYABIWeb/manage.py qcluster
+
+[Install]
+WantedBy=multi-user.target
