@@ -13,7 +13,7 @@ python manage.py qcluster
 
 ## production settings:
 - In production q cluster should be run as daemon process
-- In (`qcluster.service`)[https://github.com/ARPA-Industry/HAMYABI-Web/blob/master/HAMYABIWeb/background%20tasks/qcluster.service]:
+- In `qcluster.service`:
 	- change the `User` according to your server user
 	- change the `ExecStart` and add paths to the project and virtual environement according to the server
 - copy the file `qcluster.service` in this folder and place it in `/etc/systemd/system`
